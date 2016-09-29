@@ -1,0 +1,175 @@
+/* full page */
+body {
+  font-family: proxima-nova,Helvetica Nue,Helvetica,Arial sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 100; }
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px; }
+
+img {
+  margin-right: 10px; }
+
+header a.navbar-brand {
+  margin: 10px 0px;
+  display: block;
+  width: 108px;
+  height: 40px;
+  text-indent: -9999em;
+  background: url(../-/images/logo.svg) no-repeat; }
+header .navbar-default {
+  border-bottom: thin solid #00a3e0; }
+
+p {
+  font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif;
+  font-size: 18px; }
+
+#hero, #final-cta {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(55, 59, 64, 0.12);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block; }
+  #hero p, #final-cta p {
+    margin: 40px 0px; }
+  #hero a.watch-video, #final-cta a.watch-video {
+    display: block;
+    margin: 40px 0px 95px;
+    font-size: 24px;
+    font-weight: 100; }
+  #hero .hero-overlay-dark, #final-cta .hero-overlay-dark {
+    background-color: rgba(0, 0, 0, 0.66);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0; }
+  #hero .value-proposition, #final-cta .value-proposition {
+    padding-top: 108px; }
+    #hero .value-proposition h1, #hero .value-proposition p, #final-cta .value-proposition h1, #final-cta .value-proposition p {
+      color: white; }
+    #hero .value-proposition h1, #final-cta .value-proposition h1 {
+      font-size: 50px;
+      font-weight: 100; }
+    #hero .value-proposition p, #final-cta .value-proposition p {
+      font-size: 18px;
+      font-weight: 100; }
+  #hero .marketo-form-outer, #final-cta .marketo-form-outer {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px; }
+    #hero .marketo-form-outer .mktoForm, #final-cta .marketo-form-outer .mktoForm {
+      width: 100% !important; }
+      #hero .marketo-form-outer .mktoForm .mktoFormRow, #final-cta .marketo-form-outer .mktoForm .mktoFormRow {
+        display: inline-block; }
+        #hero .marketo-form-outer .mktoForm .mktoFormRow .mktoFormCol, #final-cta .marketo-form-outer .mktoForm .mktoFormRow .mktoFormCol {
+          width: 200px;
+          margin-bottom: 0 !important;
+          display: inline-block;
+          margin-left: 10px; }
+      #hero .marketo-form-outer .mktoForm .mktoButtonRow, #final-cta .marketo-form-outer .mktoForm .mktoButtonRow {
+        display: inline-block; }
+        #hero .marketo-form-outer .mktoForm .mktoButtonRow .mktoButtonWrap, #final-cta .marketo-form-outer .mktoForm .mktoButtonRow .mktoButtonWrap {
+          margin-left: 0px !important; }
+
+.two-up {
+  padding: 100px 0px;
+  border-bottom: thin solid #ebebeb; }
+  .two-up h2 {
+    font-size: 30px;
+    font-weight: 100;
+    color: #00a3e0; }
+  .two-up p {
+    margin-top: 30px; }
+
+.grey-center {
+  background-color: #ebebeb;
+  padding: 100px 0px; }
+  .grey-center h2 {
+    font-weight: 100; }
+
+.full-frame-video .embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden; }
+.full-frame-video .embed-responsive .embed-responsive-item,
+.full-frame-video .embed-responsive iframe,
+.full-frame-video .embed-responsive embed,
+.full-frame-video .embed-responsive object,
+.full-frame-video .embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; }
+.full-frame-video .embed-responsive-16by9 {
+  padding-bottom: 56.25%; }
+.full-frame-video .embed-responsive-4by3 {
+  padding-bottom: 75%; }
+
+#customer-testimonial {
+  background-image: url("../-/images/CustomerQuote_Image_Desktop.jpg");
+  min-height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 150px;
+  position: relative;
+  overflow: hidden; }
+  #customer-testimonial p {
+    color: white;
+    font-size: 24px;
+    font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif;
+    font-weight: 100;
+    text-align: center; }
+  #customer-testimonial .customer-overlay {
+    background-color: rgba(0, 0, 0, 0.66);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0; }
+
+#final-cta {
+  background-color: #00a3e0;
+  color: white;
+  padding: 100px 0px 0px;
+  margin-top: 0px; }
+  #final-cta h2 {
+    font-weight: 100;
+    font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif; }
+  #final-cta .marketo-form-outer {
+    margin-top: 100px; }
+
+footer {
+  padding: 100px 0px; }
+  footer table {
+    width: 100%;
+    margin-bottom: 35px; }
+    footer table th {
+      font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 0px; }
+    footer table td {
+      font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif;
+      font-size: 12px;
+      font-weight: 100;
+      padding: 5px 0px; }
+  footer p {
+    font-weight: 100;
+    font-size: 12px;
+    font-family: proxima-nova, Helvetica Nue, Helvetica, Arial sans-serif; }

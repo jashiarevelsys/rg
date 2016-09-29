@@ -1,0 +1,254 @@
+// Sprite Mixin
+// ---------------------------------------------
+// 1. Sprite
+// 2. Image Cover
+// 3. CSS3 Transitions
+// 4. Keyframes
+// 5. Breakpoints
+// 6. Utilities
+// 7. General
+
+// Sprite Mixin
+// ---------------------------------------------
+@mixin sprite($img, $x, $y) {
+  background-image: url("$img");
+  background-position: $x $y;
+  background-repeat: no-repeat;
+}
+
+// Image Cover Mixin
+// ---------------------------------------------
+@mixin cover($color, $img) {
+  @if $img {
+    background-image: url($img);
+  }
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color;
+    opacity: 0.75;
+    z-index: 1;
+  }
+}
+
+//  SVG background images with PNG
+// -----------------------------------------------
+
+$image-path: '-/img_min' !default;
+$fallback-extension: 'png' !default;
+
+@mixin svg-background($name, $size:false){
+  background-image: url(#{$image-path}/#{$name}.svg);
+  @if($size){
+    background-size: $size;
+  }
+  .no-svg &{
+    background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+  }
+}
+
+
+// CSS3 Transitions
+// ---------------------------------------------
+@mixin transition($transition) {
+  -moz-transition:    unquote($transition);
+  -o-transition:      unquote($transition);
+  -webkit-transition: unquote($transition);
+  transition:         unquote($transition);
+}
+@mixin transform($transforms) {
+  -moz-transform: unquote($transforms);
+  -o-transform: unquote($transforms);
+  -ms-transform: unquote($transforms);
+  -webkit-transform: unquote($transforms);
+  transform: unquote($transforms);
+}
+
+// Vertical Align
+// ---------------------------------------------
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+// Colors
+// ----------------------------------------------
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+
+// Keyframes
+// ----------------------------------------------
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// Breakpoints
+// ---------------------------------------------
+@mixin bp($name) {
+  $value: map-get($breakpoints, $name);
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "The '#{$name}' breakpoint is not defined. "
+        + "Please make sure it is defined in the global.scss '$breakpoint' map.";
+  }
+}
+
+
+// Utilities
+// ---------------------------------------------
+::selection {
+	background: #333;
+	color: #E5E5E5;
+}
+::-moz-selection {
+	background: #333;
+	color: #E5E5E5;
+}
+*:focus {
+	outline: none
+}
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+.clear {
+    zoom:1;
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+@include placeholder(){
+  color: $light-gray;
+}
+
+/**
+ * PX to EMs
+ * @access public
+ * @param {Pixel Value} $pxval - Pixel value to convert
+ * @param {Base Value} $base - Base font size value
+ * @return {Pixel Value}
+ */
+@function em($pxval, $base: 16px) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+/**
+ * Strip Units
+ * @access public
+ * @param {Value} $val - Value to strip
+ * @return {Value}
+ */
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}
+
+// General Mixins
+// ---------------------------------------------
+@mixin clearfix() {
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+}
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline-style:none;
+}
+
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}

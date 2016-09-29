@@ -1,0 +1,86 @@
+form.mktoForm {
+  
+  .mktoFormRow {
+    margin-bottom: 0px;
+    width: 100%;
+    margin-right: 4px;
+    .mktoFormCol {
+      .mktoFieldWrap {
+        label {
+          display: none;
+        }
+      }
+    }
+    input {
+      height: 3.5em;
+      font-size: 1em;
+    }
+    @media (max-width: 1000px) {
+      margin-bottom: 10px;
+      width: 95%;
+
+      input {
+        height:inherit;
+          font-size: .9375em;
+
+        @media (max-height:480px) {
+          height: 3em;
+        }
+      }
+    } 
+  }
+  
+  #FirstName, #LastName, #Company, #Email, #Phone {
+    color: #373b40;
+      padding: 14px 33px 12px;
+      transition: border .15s;
+      border: 0;
+  }
+
+  .mktoButtonRow {
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      .mktoButtonWrap {
+        width: 100%;
+      }
+
+    }
+
+    .mktoButtonWrap {
+      .mktoButton {
+          color: #00a3e0;
+        border-color: #00a3e0;
+          display: inline-block;
+          padding: 14px 21px 12px;
+          border-radius: 5px;
+          line-height: 1;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 600;
+          letter-spacing: .125em;
+          transition: all .15s;
+
+          &:hover{
+          color:white;
+          border-color: #fff;
+          cursor: pointer;
+          }
+      }
+    }
+  }
+  .mktoError {
+    position: relative;
+    bottom: 0px!important; 
+      top: initial!important;
+      left: 14px!important; 
+
+    .mktoErrorMsg {
+      position: absolute;
+    }
+  }
+  input#Company {
+      background: url("http://revelsystems.com/wp-content/themes/reveldown/-/img_min/_icons/icon--enterprise.svg") 8px center no-repeat #fff;
+      background-size: 20px;
+    }
+}

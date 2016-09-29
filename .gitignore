@@ -1,1 +1,4 @@
 /bower_components/
+config.codekit
+.sass-cache/
+/project-files/

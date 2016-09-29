@@ -1,0 +1,46 @@
+// Colors
+// ---------------------------------------------
+$revel-blue: #00a3e0; 
+$revel-night: #373b40;
+
+$l-pad: 120px;
+$m-pad: 90px;
+$s-pad: 60px;
+
+$primary: $revel-blue;
+
+$black: #000;
+$white: #fff;
+$red: #c61500;
+
+// Grays
+$gray: $revel-night;
+$light-gray: rgba($gray,.7); // Used on primary navigation links //70%;
+$lighter-gray: rgba($gray,.38);
+$lightest-gray: rgba($gray,.12); // USED IN TOP BORDER OF HEADER 
+$dark-gray: darken($gray, 8%); // #222527; //equal to $revel-night with 50% black overlay
+
+// Random grays
+$gray1: rgba($gray,.02);  // Section background
+$gray2: rgba($gray,.27); // H5 lightest gray
+$gray3: lighten($gray, 30%); // #8B898C;
+
+// alert colors
+$red: #e93400;
+
+// Fonts
+// ---------------------------------------------
+$proxima-nova: 'proxima-nova';
+
+
+// Breakpoints
+// ---------------------------------------------
+$breakpoints: (
+  xxxl: (min-width: 2000px),
+  xxl: (max-width: 1300px),
+  xl: (min-width: 1100px),
+  l: (max-width: 1099px),
+  m: (max-width: 880px),
+  s: (max-width: 700px),
+  xs: (max-width: 420px),
+);
